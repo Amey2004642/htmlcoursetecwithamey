@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>TecwithAmey | Advanced Quiz & Certificate</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #e9eef3 0%, #f0f2f5 100%);
+      padding: 30px 20px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 30px 30px 40px;
+      border-radius: 32px;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s ease;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1f0338;
+      font-weight: 700;
+      font-size: 2rem;
+      letter-spacing: -0.3px;
+      margin-bottom: 8px;
+    }
+
+    .quiz-header {
+      text-align: center;
+      margin-bottom: 25px;
+      border-bottom: 2px solid #ede7f6;
+      padding-bottom: 15px;
+    }
+
+    .student-section {
+      background: #f8f4ff;
+      padding: 15px 20px;
+      border-radius: 28px;
+      margin-bottom: 28px;
+      border: 1px solid #e2d6f0;
+    }
+
+    .student-section label {
+      font-weight: 700;
+      color: #2b0140;
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 14px 18px;
+      border: 2px solid #ddd2e8;
+      border-radius: 60px;
+      font-size: 1rem;
+      transition: 0.2s;
+      background: white;
+      outline: none;
+    }
+
+    input[type="text"]:focus {
+      border-color: #8a4fff;
+      box-shadow: 0 0 0 3px rgba(138, 79, 255, 0.2);
+    }
+
+    .question {
+      background: #fefefe;
+      margin-bottom: 28px;
+      padding: 12px 18px 18px;
+      border-radius: 24px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+      border: 1px solid #efebf5;
+      transition: all 0.1s;
+    }
+
+    .question p {
+      font-weight: 800;
+      color: #1f0338;
+      margin-bottom: 12px;
+      font-size: 1.05rem;
+    }
+
+    .options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .options div {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    button {
+      background: linear-gradient(95deg, #2b0140, #4b1e6b);
+      color: white;
+      border: none;
+      padding: 14px 30px;
+      border-radius: 60px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+      width: 100%;
+      transition: 0.2s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 12px;
+    }
+
+    button:hover {
+      background: linear-gradient(95deg, #401261, #5f2a88);
+      transform: scale(0.98);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    #result {
+      margin-top: 25px;
+      text-align: center;
+      background: #eef2ff;
+      padding: 18px;
+      border-radius: 40px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #2b0140;
+    }
+
+    /* ---------- CERTIFICATE STYLES (premium) ---------- */
+    #certificate {
+      display: none;
+      background: #fffef7;
+      margin-top: 45px;
+      padding: 45px 40px 50px;
+      border: 14px double #d4af37;
+      border-radius: 28px;
+      position: relative;
+      box-shadow: 0 25px 40px -15px rgba(0, 0, 0, 0.3);
+      transition: 0.2s;
+    }
+
+    #certificate:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: linear-gradient(90deg, #d4af37, #2b0140, #00bfff, #d4af37);
+      border-radius: 20px 20px 0 0;
+    }
+
+    .logo-cert {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .logo-img {
+      width: 110px;
+      height: auto;
+      display: inline-block;
+      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    }
+
+    .org-name {
+      text-align: center;
+      font-size: 38px;
+      font-weight: 800;
+      color: #1a0033;
+      letter-spacing: 2px;
+      font-family: 'Segoe UI', 'Poppins', sans-serif;
+      margin-top: 5px;
+    }
+
+    .tagline {
+      text-align: center;
+      color: #4f4f6f;
+      font-size: 14px;
+      letter-spacing: 1px;
+      border-top: 1px solid #e2d6f0;
+      width: auto;
+      margin: 8px auto 15px;
+      padding-top: 6px;
+      font-style: italic;
+    }
+
+    .certificate-title {
+      text-align: center;
+      font-size: 58px;
+      font-weight: 800;
+      color: #2b0140;
+      font-family: 'Times New Roman', Georgia, serif;
+      margin: 15px 0 5px;
+      letter-spacing: 3px;
+    }
+
+    .sub-title {
+      text-align: center;
+      color: #00bfff;
+      letter-spacing: 6px;
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #f0e7d6;
+      display: inline-block;
+      padding-bottom: 4px;
+      width: auto;
+    }
+
+    .center {
+      text-align: center;
+      margin: 12px 0;
+      font-size: 18px;
+      color: #1e2a3a;
+    }
+
+    .student-name {
+      text-align: center;
+      font-size: 52px;
+      font-family: 'Brush Script MT', cursive, 'Segoe UI', sans-serif;
+      color: #2b0140;
+      margin: 15px 0 10px;
+      font-weight: 500;
+      word-break: break-word;
+      background: #fcf8e8;
+      display: inline-block;
+      width: 100%;
+      border-radius: 80px;
+      padding: 5px 20px;
+    }
+
+    .course-name {
+      text-align: center;
+      font-size: 28px;
+      background: linear-gradient(135deg, #00bfff, #2b0140);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      font-weight: bold;
+      margin: 12px 0 8px;
+    }
+
+    .info {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin: 35px 0 20px;
+      flex-wrap: wrap;
+    }
+
+    .info-box {
+      text-align: center;
+      background: #faf5ff;
+      padding: 12px 24px;
+      border-radius: 32px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .info-box h3 {
+      color: #2b0140;
+      font-weight: 700;
+      margin-bottom: 6px;
+      font-size: 1.2rem;
+    }
+
+    .info-box p {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1f0338;
+    }
+
+    .signature-area {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 50px;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    .signature {
+      width: 240px;
+      text-align: center;
+    }
+
+    .signature-img {
+      max-width: 140px;
+      height: auto;
+      margin-bottom: 5px;
+    }
+
+    .signature-line {
+      border-top: 2px solid #2b2b2b;
+      width: 100%;
+      margin: 14px 0 6px;
+    }
+
+    .signature-text {
+      font-size: 14px;
+      font-weight: 500;
+      color: #2d3748;
+    }
+
+    .cert-id {
+      position: absolute;
+      top: 25px;
+      right: 30px;
+      font-weight: 600;
+      background: #f0eef9;
+      padding: 6px 14px;
+      border-radius: 40px;
+      font-size: 13px;
+      color: #2b0140;
+      letter-spacing: 0.5px;
+    }
+
+    .print-btn {
+      display: block;
+      margin: 40px auto 10px;
+      background: #1f5e3a;
+      background: linear-gradient(135deg, #145c33, #0a4023);
+      width: 260px;
+      text-align: center;
+      border-radius: 60px;
+      box-shadow: none;
+    }
+
+    .print-btn:hover {
+      background: #0c4a2c;
+    }
+
+    /* ---------- PRINT STYLES ---------- */
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+        margin: 0;
+      }
+      .container form,
+      #result,
+      .print-btn,
+      h1,
+      .student-section,
+      button,
+      .quiz-header,
+      .question,
+      #result {
+        display: none !important;
+      }
+      #certificate {
+        display: block !important;
+        border: 12px double #b8860b !important;
+        margin: 0 !important;
+        padding: 30px 25px !important;
+        box-shadow: none !important;
+        border-radius: 20px !important;
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+      .signature-img {
+        filter: grayscale(0%) brightness(1);
+      }
+      .cert-id {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+      .print-btn {
+        display: none;
+      }
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      margin-top: 25px;
+      color: #6b6b7a;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="quiz-header">
+    <h1>🎓 TecwithAmey • HTML & CSS Master Challenge</h1>
+    <p style="color:#3c2b52;">15 questions • Score ≥70% to unlock premium certificate</p>
+  </div>
+
+  <div class="student-section">
+    <label>✨ Candidate Full Name (exactly as on certificate)</label>
+    <input type="text" id="studentName" placeholder="e.g., Sarah Williams" autocomplete="off">
+  </div>
+
+  <form id="quizForm">
+    <!-- 15 QUESTIONS covering HTML & CSS basics and advanced concepts -->
+    <div class="question"><p>1️⃣ What does HTML stand for?</p><div class="options"><div><input type="radio" name="q1" value="1"> <label>HyperText Markup Language</label></div><div><input type="radio" name="q1" value="0"> <label>Home Tool Markup Language</label></div></div></div>
+    <div class="question"><p>2️⃣ Which tag creates a paragraph?</p><div class="options"><div><input type="radio" name="q2" value="1"> <label>&lt;p&gt;</label></div><div><input type="radio" name="q2" value="0"> <label>&lt;h1&gt;</label></div></div></div>
+    <div class="question"><p>3️⃣ Which CSS property changes text color?</p><div class="options"><div><input type="radio" name="q3" value="1"> <label>color</label></div><div><input type="radio" name="q3" value="0"> <label>font-size</label></div></div></div>
+    <div class="question"><p>4️⃣ Which tag is used for hyperlinks?</p><div class="options"><div><input type="radio" name="q4" value="1"> <label>&lt;a&gt;</label></div><div><input type="radio" name="q4" value="0"> <label>&lt;img&gt;</label></div></div></div>
+    <div class="question"><p>5️⃣ CSS stands for?</p><div class="options"><div><input type="radio" name="q5" value="1"> <label>Cascading Style Sheets</label></div><div><input type="radio" name="q5" value="0"> <label>Creative Style Sheets</label></div></div></div>
+    <div class="question"><p>6️⃣ Which HTML element defines the largest heading?</p><div class="options"><div><input type="radio" name="q6" value="1"> <label>&lt;h1&gt;</label></div><div><input type="radio" name="q6" value="0"> <label>&lt;heading&gt;</label></div></div></div>
+    <div class="question"><p>7️⃣ Which CSS property controls the spacing between lines of text?</p><div class="options"><div><input type="radio" name="q7" value="1"> <label>line-height</label></div><div><input type="radio" name="q7" value="0"> <label>letter-spacing</label></div></div></div>
+    <div class="question"><p>8️⃣ What is the correct HTML for inserting a background image?</p><div class="options"><div><input type="radio" name="q8" value="0"> <label>&lt;body bg="bg.jpg"&gt;</label></div><div><input type="radio" name="q8" value="1"> <label>&lt;body style="background-image:url('bg.jpg')"&gt;</label></div></div></div>
+    <div class="question"><p>9️⃣ Which CSS property is used to change the font of an element?</p><div class="options"><div><input type="radio" name="q9" value="1"> <label>font-family</label></div><div><input type="radio" name="q9" value="0"> <label>text-style</label></div></div></div>
+    <div class="question"><p>🔟 How do you select an element with id "header" in CSS?</p><div class="options"><div><input type="radio" name="q10" value="1"> <label>#header</label></div><div><input type="radio" name="q10" value="0"> <label>.header</label></div></div></div>
+    <div class="question"><p>1️⃣1️⃣ Which HTML attribute is used to define inline styles?</p><div class="options"><div><input type="radio" name="q11" value="1"> <label>style</label></div><div><input type="radio" name="q11" value="0"> <label>class</label></div></div></div>
+    <div class="question"><p>1️⃣2️⃣ What does the CSS `float` property do?</p><div class="options"><div><input type="radio" name="q12" value="1"> <label>Positions an element to the left or right</label></div><div><input type="radio" name="q12" value="0"> <label>Makes element float in air</label></div></div></div>
+    <div class="question"><p>1️⃣3️⃣ Which HTML tag is used to define an unordered list?</p><div class="options"><div><input type="radio" name="q13" value="1"> <label>&lt;ul&gt;</label></div><div><input type="radio" name="q13" value="0"> <label>&lt;ol&gt;</label></div></div></div>
+    <div class="question"><p>1️⃣4️⃣ Which of the following is the correct way to apply CSS to HTML elements?</p><div class="options"><div><input type="radio" name="q14" value="0"> <label>&lt;css&gt; color: red; &lt;/css&gt;</label></div><div><input type="radio" name="q14" value="1"> <label>&lt;link rel="stylesheet" href="style.css"&gt;</label></div></div></div>
+    <div class="question"><p>1️⃣5️⃣ What does the CSS property `display: flex` do?</p><div class="options"><div><input type="radio" name="q15" value="1"> <label>Enables flexible box layout</label></div><div><input type="radio" name="q15" value="0"> <label>Hides element completely</label></div></div></div>
+
+    <button type="button" onclick="submitQuiz()">✅ SUBMIT QUIZ & GENERATE RESULT</button>
+  </form>
+
+  <div id="result"></div>
+
+  <!-- CERTIFICATE with image1 for signature and image2 for logo -->
+  <div id="certificate">
+    <div class="cert-id">
+      🏅 ID: <span id="certificateId"></span>
+    </div>
+    <div class="logo-cert">
+      <img src="image2" alt="TecwithAmey Official Logo" class="logo-img" onerror="this.onerror=null; this.src='https://placehold.co/120x80?text=TWA+Logo';">
+    </div>
+    <div class="org-name">TEC WITH AMEY</div>
+    <div class="tagline" style="display: block; text-align: center;">Independent Educational & Skill Development Platform</div>
+    <div class="certificate-title">CERTIFICATE</div>
+    <div class="sub-title" style="display: block; text-align: center;">OF COMPLETION</div>
+    <p class="center">🌟 This Certificate is Proudly Presented To 🌟</p>
+    <div class="student-name" id="certName">Student Name</div>
+    <p class="center">🎯 For Successfully Completing 🎯</p>
+    <div class="course-name">HTML & CSS MASTERY (Advanced Basics)</div>
+    <p class="center" style="font-style:italic;">with dedication, technical understanding and excellent performance.</p>
+    <div class="info">
+      <div class="info-box"><h3>📅 Date of Issue</h3><p id="certDate"></p></div>
+      <div class="info-box"><h3>🏆 Final Score</h3><p id="certScore"></p></div>
+    </div>
+    <div class="signature-area">
+      <div class="signature">
+        <!-- Mr Amey Lole signature image1 -->
+        <img src="image1" alt="Amey Lole Signature" class="signature-img" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="signature-line" style="display: none;"></div>
+        <div class="signature-text"><strong>Amey Lole</strong><br>Founder & Lead Instructor</div>
+      </div>
+      <div class="signature">
+        <div class="signature-line"></div>
+        <div class="signature-text"><strong>TecwithAmey</strong><br>Course Provider & Verification</div>
+      </div>
+    </div>
+    <button class="print-btn" onclick="window.print()">🖨️ SAVE / PRINT CERTIFICATE</button>
+  </div>
+  <footer>⭐ Passing threshold: 70% • 15 questions, each carries 1 point. Keep learning with TecwithAmey!</footer>
+</div>
+
+<script>
+  function submitQuiz() {
+    let name = document.getElementById("studentName").value.trim();
+    if (name === "") {
+      alert("❌ Please enter your full name to continue.");
+      return;
+    }
+
+    const totalQuestions = 15;
+    let score = 0;
+
+    for (let i = 1; i <= totalQuestions; i++) {
+      let selected = document.querySelector(`input[name="q${i}"]:checked`);
+      if (selected) {
+        score += parseInt(selected.value);
+      }
+    }
+
+    let percentage = (score / totalQuestions) * 100;
+    let roundedPercent = Math.round(percentage);
+    let resultDiv = document.getElementById("result");
+    
+    if (roundedPercent >= 70) {
+      resultDiv.innerHTML = `<span>✨ AWESOME! ✨ <br> Your Score: ${score}/${totalQuestions} (${roundedPercent}%)<br>🏅 You've earned the TecwithAmey Certificate! 🏅</span>`;
+    } else {
+      resultDiv.innerHTML = `<span>📘 Your Score: ${score}/${totalQuestions} (${roundedPercent}%)<br>📌 You need 70% or higher to unlock the certificate. Review the topics and try again!</span>`;
+    }
+
+    const certificateDiv = document.getElementById("certificate");
+
+    if (roundedPercent >= 70) {
+      // generate and display certificate
+      certificateDiv.style.display = "block";
+
+      document.getElementById("certName").innerText = name;
+      document.getElementById("certScore").innerHTML = `${roundedPercent}% (${score}/${totalQuestions})`;
+
+      const today = new Date();
+      const formattedDate = today.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+      document.getElementById("certDate").innerText = formattedDate;
+
+      let randomSuffix = Math.floor(1000 + Math.random() * 9000);
+      let certID = `TWA-${today.getFullYear()}-${randomSuffix}`;
+      document.getElementById("certificateId").innerText = certID;
+
+      // smooth scroll to certificate view
+      setTimeout(() => {
+        certificateDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 180);
+    } else {
+      certificateDiv.style.display = "none";
+      alert(`⚠️ Score: ${roundedPercent}%. Minimum 70% required for certificate. Keep practicing!`);
+    }
+
+    // fallback image handling for broken images (image1 / image2)
+    const logoImg = document.querySelector('.logo-img');
+    if (logoImg && logoImg.complete && logoImg.naturalWidth === 0) {
+      logoImg.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80"%3E%3Crect width="100" height="80" fill="%232b0140"/%3E%3Ctext x="12" y="45" fill="white" font-size="10"%3ETWA%3C/text%3E%3C/svg%3E';
+    }
+    const signImg = document.querySelector('.signature-img');
+    if (signImg && signImg.complete && signImg.naturalWidth === 0) {
+      signImg.style.display = 'none';
+      let parentDiv = signImg.parentNode;
+      let lineDiv = parentDiv.querySelector('.signature-line');
+      if (lineDiv) lineDiv.style.display = 'block';
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', function() {
+    document.getElementById("certificate").style.display = "none";
+    document.getElementById("result").innerHTML = "";
+    // ensure both images have backup if they fail to load
+    const logo = document.querySelector('.logo-img');
+    if (logo) {
+      logo.onerror = function() {
+        this.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80"%3E%3Crect width="120" height="80" fill="%23401a5e"/%3E%3Ctext x="18" y="48" fill="gold" font-size="13"%3ETecwithAmey%3C/text%3E%3C/svg%3E';
+      };
+    }
+    const signature = document.querySelector('.signature-img');
+    if (signature) {
+      signature.onerror = function() {
+        this.style.display = 'none';
+        let wrapper = this.parentNode;
+        let lineDiv = wrapper.querySelector('.signature-line');
+        if (lineDiv) lineDiv.style.display = 'block';
+      };
+    }
+  });
+</script>
+</body>
+</html>
