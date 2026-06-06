@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>TecwithAmey | Quiz & Certificate of Completion</title>
+  <title>TecwithAmey | Basics of HTML & CSS - Earn Your Badge</title>
   <style>
     * {
       margin: 0;
@@ -138,345 +138,158 @@
       color: #2b0140;
     }
 
-    /* ========== CERTIFICATE OF COMPLETION DESIGN ========== */
-    #certificate {
+    /* ========== BADGE DESIGN ========== */
+    .badge-container {
       display: none;
-      background: linear-gradient(135deg, #fffef7 0%, #fffaf0 100%);
-      margin-top: 45px;
-      padding: 50px 45px 55px;
-      border: 1px solid rgba(212, 175, 55, 0.4);
-      border-radius: 32px;
-      position: relative;
-      box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255,255,255,0.9);
-      transition: 0.2s;
-    }
-
-    /* decorative golden border layers */
-    #certificate::after {
-      content: "";
-      position: absolute;
-      top: 18px;
-      left: 18px;
-      right: 18px;
-      bottom: 18px;
-      border: 2px solid rgba(212, 175, 55, 0.5);
-      border-radius: 20px;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* elegant corner ornaments */
-    .cert-corner {
-      position: absolute;
-      width: 70px;
-      height: 70px;
-      border-style: solid;
-      border-color: #d4af37;
-      z-index: 2;
-      pointer-events: none;
-    }
-    .corner-tl { top: 20px; left: 20px; border-width: 4px 0 0 4px; }
-    .corner-tr { top: 20px; right: 20px; border-width: 4px 4px 0 0; }
-    .corner-bl { bottom: 20px; left: 20px; border-width: 0 0 4px 4px; }
-    .corner-br { bottom: 20px; right: 20px; border-width: 0 4px 4px 0; }
-
-    #certificate:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 12px;
-      background: linear-gradient(90deg, #d4af37, #b8860b, #f5e7b2, #d4af37);
-      border-radius: 32px 32px 0 0;
-    }
-
-    .logo-cert {
-      text-align: center;
-      margin-bottom: 12px;
-      position: relative;
-      z-index: 3;
-    }
-
-    .logo-img {
-      width: 130px;
-      height: auto;
-      filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15));
-      transition: transform 0.2s;
-      border-radius: 12px;
-    }
-
-    .org-name {
-      text-align: center;
-      font-size: 42px;
-      font-weight: 800;
-      background: linear-gradient(135deg, #1a0033, #3a1b6e);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      letter-spacing: 2px;
-      font-family: 'Segoe UI', 'Poppins', sans-serif;
-      margin-top: 8px;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.05);
-      position: relative;
-      z-index: 3;
-    }
-
-    .platform-badge {
-      text-align: center;
-      color: #7a6a5c;
-      font-size: 13px;
-      letter-spacing: 2px;
-      border-top: 1px solid #e2d6c5;
-      display: inline-block;
-      width: auto;
-      margin: 10px auto 18px;
-      padding-top: 8px;
-      font-style: normal;
-      font-weight: 500;
-      text-transform: uppercase;
-      position: relative;
-      z-index: 3;
-    }
-
-    .certificate-title {
-      text-align: center;
-      font-size: 52px;
-      font-weight: 800;
-      background: linear-gradient(135deg, #c9a23b, #2b0140, #8b6914);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      font-family: 'Times New Roman', Georgia, serif;
-      margin: 15px 0 5px;
-      letter-spacing: 4px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
-      position: relative;
-      z-index: 3;
-    }
-
-    .sub-title {
-      text-align: center;
-      color: #c9a23b;
-      letter-spacing: 8px;
-      font-weight: 700;
-      font-size: 20px;
-      margin-bottom: 25px;
-      border-bottom: 1px dashed #e4cf9e;
-      display: inline-block;
-      padding-bottom: 6px;
-      width: auto;
-      position: relative;
-      z-index: 3;
-    }
-
-    .center {
-      text-align: center;
-      margin: 14px 0;
-      font-size: 18px;
-      color: #2c3e4e;
-      font-weight: 500;
-      position: relative;
-      z-index: 3;
-    }
-
-    .student-name {
-      text-align: center;
-      font-size: 58px;
-      font-family: 'Brush Script MT', 'cursive', 'Segoe UI', sans-serif;
-      color: #1f0338;
-      margin: 15px 0 12px;
-      font-weight: 600;
-      word-break: break-word;
-      background: linear-gradient(145deg, #fdf9ed, #fff6e5);
-      display: inline-block;
-      width: 100%;
-      border-radius: 80px;
-      padding: 8px 28px;
-      box-shadow: inset 0 1px 4px rgba(0,0,0,0.02), 0 8px 18px -8px rgba(0,0,0,0.1);
-      border: 1px solid #f1e5cf;
-      position: relative;
-      z-index: 3;
-    }
-
-    .course-name {
-      text-align: center;
-      font-size: 32px;
-      background: linear-gradient(115deg, #0077b6, #2b0140, #00b4d8);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      font-weight: 800;
-      margin: 12px 0 6px;
-      letter-spacing: 1px;
-      position: relative;
-      z-index: 3;
-    }
-
-    .info {
-      display: flex;
-      justify-content: center;
-      gap: 60px;
-      margin: 35px 0 20px;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 3;
-    }
-
-    .info-box {
-      text-align: center;
-      background: rgba(250, 245, 235, 0.8);
-      backdrop-filter: blur(2px);
-      padding: 12px 28px;
+      margin-top: 40px;
+      padding: 25px;
+      background: linear-gradient(135deg, #fff8ed, #fffef7);
       border-radius: 48px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      border: 1px solid #f7e9d5;
+      text-align: center;
+      border: 2px solid #d4af37;
+      box-shadow: 0 15px 35px -10px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
     }
 
-    .info-box h3 {
-      color: #b47c2e;
-      font-weight: 700;
-      margin-bottom: 6px;
-      font-size: 1.2rem;
+    .badge-container::before {
+      content: "★";
+      font-size: 120px;
+      position: absolute;
+      bottom: -30px;
+      right: -30px;
+      opacity: 0.08;
+      color: #d4af37;
+      pointer-events: none;
     }
 
-    .info-box p {
-      font-size: 1.25rem;
-      font-weight: 700;
+    .badge {
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(145deg, #f5e7b2, #e2c88a);
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2), inset 0 2px 5px rgba(255,255,255,0.6);
+      border: 4px solid #b8860b;
+      position: relative;
+    }
+
+    .badge::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 1px dashed #8b6914;
+      top: 6px;
+      left: 6px;
+      pointer-events: none;
+    }
+
+    .badge-icon {
+      font-size: 55px;
+      margin-bottom: 8px;
+    }
+
+    .badge-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #2b0140;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .badge-course {
+      font-size: 14px;
+      font-weight: 600;
+      color: #6b4c1a;
+      margin-top: 5px;
+    }
+
+    .badge-id {
+      font-size: 11px;
+      background: #2b0140;
+      color: #ffdfa5;
+      padding: 4px 12px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-top: 10px;
+      font-family: monospace;
+    }
+
+    .achievement-name {
+      font-size: 26px;
+      font-weight: bold;
+      color: #1f0338;
+      margin: 15px 0 5px;
+    }
+
+    .student-badge-name {
+      font-size: 28px;
+      font-family: 'Brush Script MT', cursive;
+      color: #b8860b;
+      margin: 5px 0;
+    }
+
+    .badge-info {
+      margin: 15px 0;
+      padding: 12px;
+      background: #faf3e0;
+      border-radius: 28px;
+    }
+
+    .email-instruction {
+      background: #e8e0f0;
+      padding: 15px;
+      border-radius: 28px;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .email-instruction p {
+      margin: 8px 0;
       color: #2b0140;
     }
 
-    .signature-area {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 55px;
-      flex-wrap: wrap;
-      gap: 30px;
-      position: relative;
-      z-index: 3;
-    }
-
-    .signature {
-      width: 240px;
-      text-align: center;
-    }
-
-    .signature-img {
-      max-width: 160px;
-      height: auto;
-      margin-bottom: 8px;
-      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
-      background: transparent;
-    }
-
-    .signature-line {
-      border-top: 2px solid #a67c2e;
-      width: 85%;
-      margin: 14px auto 6px;
-    }
-
-    .signature-text {
+    .email-btn {
+      background: #1e6b3e;
+      padding: 10px 20px;
+      width: auto;
+      display: inline-block;
+      margin-top: 10px;
       font-size: 14px;
-      font-weight: 600;
-      color: #4a3b28;
+    }
+
+    .email-btn:hover {
+      background: #0f4a2c;
+      transform: scale(1.02);
+    }
+
+    .download-badge-btn {
+      background: #b8860b;
+      padding: 12px 25px;
+      width: auto;
+      display: inline-block;
+      margin: 10px 5px;
+      font-size: 14px;
+    }
+
+    .download-badge-btn:hover {
+      background: #9a6e0a;
     }
 
     .cert-id {
-      position: absolute;
-      top: 30px;
-      right: 35px;
-      font-weight: 700;
-      background: linear-gradient(115deg, #2b0140, #3c2062);
-      color: #ffdfa5;
-      padding: 7px 18px;
-      border-radius: 40px;
-      font-size: 12px;
-      letter-spacing: 0.8px;
-      z-index: 10;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .print-btn {
-      display: block;
-      margin: 45px auto 15px;
-      background: linear-gradient(135deg, #1e6b3e, #0f4a2c);
-      width: 270px;
-      text-align: center;
-      border-radius: 60px;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
       font-weight: bold;
-      position: relative;
-      z-index: 10;
-    }
-
-    .print-btn:hover {
-      background: linear-gradient(135deg, #2a804b, #166334);
-    }
-
-    /* decorative vintage pattern */
-    .cert-bg-pattern {
-      position: absolute;
-      bottom: 20px;
-      left: 0;
-      right: 0;
-      opacity: 0.03;
-      font-size: 80px;
-      text-align: center;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* Independent platform footer note */
-    .independent-note {
-      text-align: center;
-      font-size: 10px;
-      color: #9b8aab;
-      margin-top: 12px;
-      letter-spacing: 0.5px;
-    }
-
-    @media print {
-      body {
-        background: white;
-        padding: 0;
-        margin: 0;
-      }
-      .container form,
-      #result,
-      .print-btn,
-      h1,
-      .student-section,
-      button,
-      .quiz-header,
-      .question,
-      #result,
-      .answer-hint,
-      .independent-note {
-        display: none !important;
-      }
-      #certificate {
-        display: block !important;
-        border: 1px solid #d4af37 !important;
-        margin: 0 !important;
-        padding: 35px 30px !important;
-        box-shadow: none !important;
-        border-radius: 0 !important;
-        break-inside: avoid;
-      }
-      .signature-img {
-        filter: grayscale(0%) brightness(1);
-      }
-      .cert-id {
-        position: absolute;
-        top: 25px;
-        right: 25px;
-      }
-      .print-btn {
-        display: none;
-      }
-      #certificate:after, .cert-corner {
-        display: none;
-      }
+      color: #2b0140;
+      background: #e2d6f0;
+      padding: 5px 12px;
+      border-radius: 40px;
+      display: inline-block;
+      font-family: monospace;
     }
 
     footer {
@@ -499,22 +312,43 @@
       color: #5a3a7a;
       font-weight: 500;
     }
+
+    .independent-note {
+      text-align: center;
+      font-size: 10px;
+      color: #9b8aab;
+      margin-top: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+      .container form, .student-section, button, .quiz-header, .question, .answer-hint, footer, .independent-note {
+        display: none;
+      }
+      .badge-container {
+        display: block !important;
+        margin: 0;
+        padding: 20px;
+      }
+    }
   </style>
 </head>
 <body>
 <div class="container">
   <div class="quiz-header">
-    <h1>🎓 TecwithAmey • HTML & CSS Master Challenge</h1>
-    <p style="color:#3c2b52;">15 questions • Score ≥70% to unlock Certificate of Completion</p>
+    <h1>🎓 TecwithAmey • Basics of HTML & CSS</h1>
+    <p style="color:#3c2b52;">15 questions • Score ≥70% to earn your official completion badge</p>
   </div>
 
   <div class="student-section">
-    <label>✨ Candidate Full Name (exactly as on certificate)</label>
+    <label>✨ Your Full Name (as it will appear on badge)</label>
     <input type="text" id="studentName" placeholder="e.g., Sarah Williams" autocomplete="off">
   </div>
 
   <form id="quizForm">
-    <!-- 15 comprehensive questions -->
     <div class="question"><p>1️⃣ What does HTML stand for?</p><div class="options"><div><input type="radio" name="q1" value="1"> <label>HyperText Markup Language</label></div><div><input type="radio" name="q1" value="0"> <label>Home Tool Markup Language</label></div></div></div>
     <div class="question"><p>2️⃣ Which tag creates a paragraph?</p><div class="options"><div><input type="radio" name="q2" value="1"> <label>&lt;p&gt;</label></div><div><input type="radio" name="q2" value="0"> <label>&lt;h1&gt;</label></div></div></div>
     <div class="question"><p>3️⃣ Which CSS property changes text color?</p><div class="options"><div><input type="radio" name="q3" value="1"> <label>color</label></div><div><input type="radio" name="q3" value="0"> <label>font-size</label></div></div></div>
@@ -531,58 +365,42 @@
     <div class="question"><p>1️⃣4️⃣ Correct way to apply external CSS?</p><div class="options"><div><input type="radio" name="q14" value="0"> <label>&lt;css&gt;color: red;&lt;/css&gt;</label></div><div><input type="radio" name="q14" value="1"> <label>&lt;link rel="stylesheet" href="style.css"&gt;</label></div></div></div>
     <div class="question"><p>1️⃣5️⃣ What does `display: flex` do?</p><div class="options"><div><input type="radio" name="q15" value="1"> <label>Enables flexible box layout</label></div><div><input type="radio" name="q15" value="0"> <label>Hides element</label></div></div></div>
 
-    <button type="button" onclick="submitQuiz()">✅ SUBMIT QUIZ & GET CERTIFICATE</button>
+    <button type="button" onclick="submitQuiz()">✅ SUBMIT QUIZ & EARN BADGE</button>
   </form>
 
   <div id="result"></div>
 
-  <!-- CERTIFICATE OF COMPLETION with image1.png for signature, image2.png for logo -->
-  <div id="certificate">
-    <div class="cert-corner corner-tl"></div>
-    <div class="cert-corner corner-tr"></div>
-    <div class="cert-corner corner-bl"></div>
-    <div class="cert-corner corner-br"></div>
-    <div class="cert-bg-pattern">✨ 📜 ✨</div>
-
-    <div class="cert-id">
-      🏅 CERT ID: <span id="certificateId"></span>
+  <!-- BADGE SECTION (instead of certificate) -->
+  <div id="badgeContainer" class="badge-container">
+    <div class="badge">
+      <div class="badge-icon">🏅</div>
+      <div class="badge-title">CERTIFICATE OF</div>
+      <div class="badge-course">COMPLETION</div>
+      <div class="badge-id" id="badgeIdDisplay">TWA-XXXX-XXXX</div>
     </div>
-    <div class="logo-cert">
-      <!-- image2.png = logo image -->
-      <img src="image2.png" alt="TecwithAmey Logo" class="logo-img" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 140 90\"%3E%3Crect width=\"140\" height=\"90\" fill=\"%232b0140\"/%3E%3Ctext x=\"22\" y=\"52\" fill=\"%23d4af37\" font-size=\"13\" font-weight=\"bold\"%3ETWA%3C/text%3E%3C/svg%3E';">
+    <div class="achievement-name">🎉 Achievement Unlocked! 🎉</div>
+    <div class="student-badge-name" id="badgeStudentName">Student Name</div>
+    <div class="badge-info">
+      <p>✅ <strong>Basics of HTML & CSS</strong> — successfully completed</p>
+      <p>📅 Date: <span id="badgeDate"></span> &nbsp;|&nbsp; 🎯 Score: <span id="badgeScore"></span></p>
+      <p>🏅 Badge ID: <span class="cert-id" id="finalBadgeId"></span></p>
     </div>
-    <div class="org-name">TEC WITH AMEY</div>
-    <div class="platform-badge" style="display: block; text-align: center;">🏛️ INDEPENDENT EDUCATIONAL & SKILL DEVELOPMENT PLATFORM 🏛️</div>
-    <div class="certificate-title">CERTIFICATE</div>
-    <div class="sub-title" style="display: block; text-align: center;">📜 OF COMPLETION 📜</div>
-    <p class="center">🎖️ This Certificate is Proudly Presented To 🎖️</p>
-    <div class="student-name" id="certName">Student Name</div>
-    <p class="center">🏆 For Successfully Completing the Course 🏆</p>
-    <div class="course-name">HTML & CSS MASTERY (Fundamentals & Core Concepts)</div>
-    <p class="center" style="font-style:italic;">demonstrating dedication, learning, and technical understanding.</p>
-    <div class="info">
-      <div class="info-box"><h3>📅 Date of Completion</h3><p id="certDate"></p></div>
-      <div class="info-box"><h3>🏅 Assessment Score</h3><p id="certScore"></p></div>
+    
+    <div class="email-instruction">
+      <p>📧 <strong>Claim Your Verified Record</strong> 📧</p>
+      <p>Email your badge image along with your Badge ID to:</p>
+      <p style="font-size: 18px; font-weight: bold; color: #2b0140;">tecwithamey@gmail.com</p>
+      <p><small>(We'll verify and maintain your achievement record)</small></p>
+      <button class="download-badge-btn" onclick="downloadBadge()">📸 Download Badge as Image</button>
+      <button class="email-btn" onclick="prepareEmail()">📧 Compose Email to TecwithAmey</button>
     </div>
-    <div class="signature-area">
-      <div class="signature">
-        <!-- image1.png = Mr Amey Lole signature -->
-        <img src="image1.png" alt="Amey Lole Signature" class="signature-img" onerror="this.onerror=null; this.style.display='none'; this.parentNode.querySelector('.signature-line').style.display='block';">
-        <div class="signature-line" style="display: none;"></div>
-        <div class="signature-text"><strong>Amey Lole</strong><br>Founder, TecwithAmey</div>
-      </div>
-      <div class="signature">
-        <div class="signature-line"></div>
-        <div class="signature-text"><strong>TecwithAmey</strong><br>Independent Learning Platform</div>
-      </div>
-    </div>
-    <button class="print-btn" onclick="window.print()">🖨️ DOWNLOAD / PRINT CERTIFICATE</button>
+    <p style="font-size: 11px; margin-top: 15px; color: #8a7a9a;">⚠️ Keep your Badge ID safe. Each ID is unique and never repeats.</p>
   </div>
-  
+
   <div class="independent-note">
     TecwithAmey — An Independent Initiative for Quality Tech Education
   </div>
-  <footer>⭐ Passing threshold: 70% • 15 questions, each 1 point. Keep learning with TecwithAmey!</footer>
+  <footer>⭐ Passing threshold: 70% • 15 questions, each 1 point. Earn your unique badge!</footer>
   <div class="answer-hint">
     <details>
       <summary>📖 Show Answer Key (for review)</summary>
@@ -598,6 +416,44 @@
 </div>
 
 <script>
+  // Store generated IDs in localStorage to ensure they NEVER repeat
+  let usedIDs = new Set();
+  
+  function loadUsedIDs() {
+    const stored = localStorage.getItem('tecwithamey_used_badge_ids');
+    if (stored) {
+      try {
+        const arr = JSON.parse(stored);
+        usedIDs = new Set(arr);
+      } catch(e) { console.warn(e); }
+    }
+  }
+  
+  function saveUsedIDs() {
+    const arr = Array.from(usedIDs);
+    localStorage.setItem('tecwithamey_used_badge_ids', JSON.stringify(arr));
+  }
+  
+  function generateUniqueID() {
+    const year = new Date().getFullYear();
+    let randomNum;
+    let attempts = 0;
+    let newID;
+    do {
+      randomNum = Math.floor(10000 + Math.random() * 90000); // 5-digit random
+      newID = `TWA-${year}-${randomNum}`;
+      attempts++;
+      if (attempts > 1000) {
+        // fallback with timestamp to avoid infinite loop
+        newID = `TWA-${year}-${Date.now()}-${Math.floor(Math.random()*1000)}`;
+        break;
+      }
+    } while (usedIDs.has(newID));
+    usedIDs.add(newID);
+    saveUsedIDs();
+    return newID;
+  }
+  
   function submitQuiz() {
     let name = document.getElementById("studentName").value.trim();
     if (name === "") {
@@ -618,70 +474,121 @@
     let percentage = (score / totalQuestions) * 100;
     let roundedPercent = Math.round(percentage);
     let resultDiv = document.getElementById("result");
+    const badgeDiv = document.getElementById("badgeContainer");
     
     if (roundedPercent >= 70) {
-      resultDiv.innerHTML = `<span>✨✨ CONGRATULATIONS! ✨✨ <br> 🎯 Score: ${score}/${totalQuestions} (${roundedPercent}%)<br>🏅 You've earned the Certificate of Completion from TecwithAmey. 🏅</span>`;
-    } else {
-      resultDiv.innerHTML = `<span>📚 Score: ${score}/${totalQuestions} (${roundedPercent}%)<br>📌 Minimum 70% required to receive Certificate of Completion. Review and try again! 💪</span>`;
-    }
-
-    const certificateDiv = document.getElementById("certificate");
-
-    if (roundedPercent >= 70) {
-      certificateDiv.style.display = "block";
-
-      document.getElementById("certName").innerText = name;
-      document.getElementById("certScore").innerHTML = `${roundedPercent}% (${score}/${totalQuestions})`;
-
+      resultDiv.innerHTML = `<span>✨✨ CONGRATULATIONS! ✨✨ <br> 🎯 Score: ${score}/${totalQuestions} (${roundedPercent}%)<br>🏅 You've earned your official TecwithAmey Completion Badge! 🏅</span>`;
+      
+      // Generate UNIQUE ID that never repeats
+      const uniqueID = generateUniqueID();
+      
       const today = new Date();
       const formattedDate = today.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
-      document.getElementById("certDate").innerText = formattedDate;
-
-      let randomSuffix = Math.floor(1000 + Math.random() * 9000);
-      let certID = `TWA-${today.getFullYear()}-${randomSuffix}`;
-      document.getElementById("certificateId").innerText = certID;
-
+      
+      // Update badge elements
+      document.getElementById("badgeStudentName").innerText = name;
+      document.getElementById("badgeDate").innerText = formattedDate;
+      document.getElementById("badgeScore").innerHTML = `${roundedPercent}% (${score}/${totalQuestions})`;
+      document.getElementById("badgeIdDisplay").innerText = uniqueID;
+      document.getElementById("finalBadgeId").innerText = uniqueID;
+      
+      // Store the generated ID in the badge dataset for email/download
+      badgeDiv.style.display = "block";
+      
+      // Scroll to badge
       setTimeout(() => {
-        certificateDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+        badgeDiv.scrollIntoView({ behavior: "smooth", block: "start" });
       }, 150);
     } else {
-      certificateDiv.style.display = "none";
-      alert(`⚠️ Score: ${roundedPercent}%. Minimum 70% required for Certificate of Completion. Keep practicing with dedication!`);
-    }
-
-    // Graceful fallback for images
-    const logoImg = document.querySelector('.logo-img');
-    if (logoImg && logoImg.complete && logoImg.naturalWidth === 0) {
-      logoImg.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 90"%3E%3Crect width="140" height="90" fill="%232b0140"/%3E%3Ctext x="22" y="52" fill="%23d4af37" font-size="14" font-weight="bold"%3ETWA%3C/text%3E%3C/svg%3E';
-    }
-    const signImg = document.querySelector('.signature-img');
-    if (signImg && signImg.complete && signImg.naturalWidth === 0) {
-      signImg.style.display = 'none';
-      let parentDiv = signImg.parentNode;
-      let lineDiv = parentDiv.querySelector('.signature-line');
-      if (lineDiv) lineDiv.style.display = 'block';
+      badgeDiv.style.display = "none";
+      resultDiv.innerHTML = `<span>📚 Score: ${score}/${totalQuestions} (${roundedPercent}%)<br>📌 Minimum 70% required to earn the badge. Review and try again! 💪</span>`;
+      alert(`⚠️ Score: ${roundedPercent}%. Minimum 70% required to earn the completion badge. Keep practicing!`);
     }
   }
-
-  window.addEventListener('DOMContentLoaded', function() {
-    document.getElementById("certificate").style.display = "none";
-    document.getElementById("result").innerHTML = "";
+  
+  // Download badge as image using html2canvas (dynamic library)
+  function downloadBadge() {
+    const badgeElement = document.getElementById("badgeContainer");
+    if (!badgeElement) return;
     
-    const logo = document.querySelector('.logo-img');
-    if (logo) {
-      logo.onerror = function() {
-        this.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 90"%3E%3Crect width="140" height="90" fill="%23331547"/%3E%3Ctext x="20" y="52" fill="%23e4c580" font-size="14"%3ETecwithAmey%3C/text%3E%3C/svg%3E';
+    // Show a temporary loading indicator
+    const originalBtnText = event.target.innerText;
+    event.target.innerText = "📸 Generating...";
+    event.target.disabled = true;
+    
+    // Dynamically load html2canvas if not already loaded
+    if (typeof html2canvas === 'undefined') {
+      const script = document.createElement('script');
+      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+      script.onload = () => {
+        captureBadge(badgeElement, event);
       };
-    }
-    const signature = document.querySelector('.signature-img');
-    if (signature) {
-      signature.onerror = function() {
-        this.style.display = 'none';
-        let wrapper = this.parentNode;
-        let lineDiv = wrapper.querySelector('.signature-line');
-        if (lineDiv) lineDiv.style.display = 'block';
+      script.onerror = () => {
+        alert("Could not load image generator. Please try again or use screenshot.");
+        event.target.innerText = originalBtnText;
+        event.target.disabled = false;
       };
+      document.head.appendChild(script);
+    } else {
+      captureBadge(badgeElement, event);
     }
+    
+    function captureBadge(el, evt) {
+      html2canvas(el, {
+        scale: 2,
+        backgroundColor: '#fffef7',
+        logging: false,
+        useCORS: false
+      }).then(canvas => {
+        const link = document.createElement('a');
+        const studentName = document.getElementById("studentName").value.trim() || "learner";
+        const badgeID = document.getElementById("finalBadgeId").innerText || "badge";
+        link.download = `TecwithAmey_Badge_${studentName.replace(/\s/g, '_')}_${badgeID}.png`;
+        link.href = canvas.toDataURL();
+        link.click();
+        evt.target.innerText = originalBtnText;
+        evt.target.disabled = false;
+      }).catch(err => {
+        console.error(err);
+        alert("Sorry, couldn't generate image. Please take a screenshot manually.");
+        evt.target.innerText = originalBtnText;
+        evt.target.disabled = false;
+      });
+    }
+  }
+  
+  function prepareEmail() {
+    const studentName = document.getElementById("studentName").value.trim() || "Student";
+    const badgeID = document.getElementById("finalBadgeId").innerText || "TWA-ID";
+    const scoreText = document.getElementById("badgeScore").innerText || "Score";
+    const dateText = document.getElementById("badgeDate").innerText || new Date().toLocaleDateString();
+    
+    const subject = encodeURIComponent(`Badge Submission - ${studentName} - ${badgeID}`);
+    const body = encodeURIComponent(
+      `Hello TecwithAmey Team,\n\n` +
+      `I have successfully completed the "Basics of HTML & CSS" course and earned my completion badge.\n\n` +
+      `📛 Badge ID: ${badgeID}\n` +
+      `👤 Name: ${studentName}\n` +
+      `📅 Date: ${dateText}\n` +
+      `🏆 Score: ${scoreText}\n\n` +
+      `(Attached my badge image with this email for verification)\n\n` +
+      `Please verify and add my achievement to your records.\n\n` +
+      `Thank you,\n${studentName}`
+    );
+    
+    window.location.href = `mailto:tecwithamey@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Fallback alert if mail client not available
+    setTimeout(() => {
+      alert("If mail app didn't open, please manually email tecwithamey@gmail.com with your Badge ID and attached badge image.");
+    }, 500);
+  }
+  
+  // Initialize: load used IDs from storage on page load
+  window.addEventListener('DOMContentLoaded', function() {
+    loadUsedIDs();
+    document.getElementById("badgeContainer").style.display = "none";
+    document.getElementById("result").innerHTML = "";
   });
 </script>
 </body>
