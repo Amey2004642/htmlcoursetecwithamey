@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>TecwithAmey | Advanced Quiz & Certificate</title>
+  <title>TecwithAmey | Advanced Quiz & Premium Certificate</title>
   <style>
     * {
       margin: 0;
@@ -138,18 +138,48 @@
       color: #2b0140;
     }
 
-    /* ---------- CERTIFICATE STYLES (premium) ---------- */
+    /* ========== ATTRACTIVE CERTIFICATE DESIGN ========== */
     #certificate {
       display: none;
-      background: #fffef7;
+      background: linear-gradient(135deg, #fffef7 0%, #fffaf0 100%);
       margin-top: 45px;
-      padding: 45px 40px 50px;
-      border: 14px double #d4af37;
-      border-radius: 28px;
+      padding: 50px 45px 55px;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      border-radius: 32px;
       position: relative;
-      box-shadow: 0 25px 40px -15px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255,255,255,0.9);
       transition: 0.2s;
+      backdrop-filter: blur(0px);
     }
+
+    /* decorative golden border layers */
+    #certificate::after {
+      content: "";
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      border: 2px solid rgba(212, 175, 55, 0.5);
+      border-radius: 20px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* elegant corner ornaments */
+    .cert-corner {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      border-style: solid;
+      border-color: #d4af37;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .corner-tl { top: 20px; left: 20px; border-width: 4px 0 0 4px; }
+    .corner-tr { top: 20px; right: 20px; border-width: 4px 4px 0 0; }
+    .corner-bl { bottom: 20px; left: 20px; border-width: 0 0 4px 4px; }
+    .corner-br { bottom: 20px; right: 20px; border-width: 0 4px 4px 0; }
 
     #certificate:before {
       content: "";
@@ -157,136 +187,173 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 8px;
-      background: linear-gradient(90deg, #d4af37, #2b0140, #00bfff, #d4af37);
-      border-radius: 20px 20px 0 0;
+      height: 12px;
+      background: linear-gradient(90deg, #d4af37, #b8860b, #f5e7b2, #d4af37);
+      border-radius: 32px 32px 0 0;
     }
 
     .logo-cert {
       text-align: center;
       margin-bottom: 12px;
+      position: relative;
+      z-index: 3;
     }
 
     .logo-img {
-      width: 110px;
+      width: 120px;
       height: auto;
-      display: inline-block;
-      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+      filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15));
+      transition: transform 0.2s;
     }
 
     .org-name {
       text-align: center;
-      font-size: 38px;
+      font-size: 42px;
       font-weight: 800;
-      color: #1a0033;
+      background: linear-gradient(135deg, #1a0033, #3a1b6e);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
       letter-spacing: 2px;
       font-family: 'Segoe UI', 'Poppins', sans-serif;
-      margin-top: 5px;
+      margin-top: 8px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.05);
+      position: relative;
+      z-index: 3;
     }
 
     .tagline {
       text-align: center;
-      color: #4f4f6f;
-      font-size: 14px;
-      letter-spacing: 1px;
-      border-top: 1px solid #e2d6f0;
+      color: #7a6a5c;
+      font-size: 13px;
+      letter-spacing: 2px;
+      border-top: 1px solid #e2d6c5;
+      display: inline-block;
       width: auto;
-      margin: 8px auto 15px;
-      padding-top: 6px;
-      font-style: italic;
+      margin: 10px auto 18px;
+      padding-top: 8px;
+      font-style: normal;
+      font-weight: 500;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 3;
     }
 
     .certificate-title {
       text-align: center;
-      font-size: 58px;
+      font-size: 64px;
       font-weight: 800;
-      color: #2b0140;
+      background: linear-gradient(135deg, #c9a23b, #2b0140, #b8860b);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
       font-family: 'Times New Roman', Georgia, serif;
       margin: 15px 0 5px;
-      letter-spacing: 3px;
+      letter-spacing: 5px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+      position: relative;
+      z-index: 3;
     }
 
     .sub-title {
       text-align: center;
-      color: #00bfff;
-      letter-spacing: 6px;
-      font-weight: 600;
+      color: #c9a23b;
+      letter-spacing: 10px;
+      font-weight: 700;
       font-size: 18px;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #f0e7d6;
+      margin-bottom: 25px;
+      border-bottom: 1px dashed #e4cf9e;
       display: inline-block;
-      padding-bottom: 4px;
+      padding-bottom: 6px;
       width: auto;
+      position: relative;
+      z-index: 3;
     }
 
     .center {
       text-align: center;
-      margin: 12px 0;
+      margin: 14px 0;
       font-size: 18px;
-      color: #1e2a3a;
+      color: #2c3e4e;
+      font-weight: 500;
+      position: relative;
+      z-index: 3;
     }
 
     .student-name {
       text-align: center;
-      font-size: 52px;
-      font-family: 'Brush Script MT', cursive, 'Segoe UI', sans-serif;
-      color: #2b0140;
-      margin: 15px 0 10px;
-      font-weight: 500;
+      font-size: 58px;
+      font-family: 'Brush Script MT', 'cursive', 'Segoe UI', sans-serif;
+      color: #1f0338;
+      margin: 15px 0 12px;
+      font-weight: 600;
       word-break: break-word;
-      background: #fcf8e8;
+      background: linear-gradient(145deg, #fdf9ed, #fff6e5);
       display: inline-block;
       width: 100%;
       border-radius: 80px;
-      padding: 5px 20px;
+      padding: 8px 28px;
+      box-shadow: inset 0 1px 4px rgba(0,0,0,0.02), 0 8px 18px -8px rgba(0,0,0,0.1);
+      border: 1px solid #f1e5cf;
+      position: relative;
+      z-index: 3;
     }
 
     .course-name {
       text-align: center;
-      font-size: 28px;
-      background: linear-gradient(135deg, #00bfff, #2b0140);
+      font-size: 32px;
+      background: linear-gradient(115deg, #0077b6, #2b0140, #00b4d8);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
-      font-weight: bold;
-      margin: 12px 0 8px;
+      font-weight: 800;
+      margin: 12px 0 6px;
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 3;
     }
 
     .info {
       display: flex;
       justify-content: center;
-      gap: 50px;
+      gap: 60px;
       margin: 35px 0 20px;
       flex-wrap: wrap;
+      position: relative;
+      z-index: 3;
     }
 
     .info-box {
       text-align: center;
-      background: #faf5ff;
-      padding: 12px 24px;
-      border-radius: 32px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      background: rgba(250, 245, 235, 0.8);
+      backdrop-filter: blur(2px);
+      padding: 12px 28px;
+      border-radius: 48px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      border: 1px solid #f7e9d5;
     }
 
     .info-box h3 {
-      color: #2b0140;
+      color: #b47c2e;
       font-weight: 700;
       margin-bottom: 6px;
       font-size: 1.2rem;
     }
 
     .info-box p {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #1f0338;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #2b0140;
     }
 
     .signature-area {
       display: flex;
       justify-content: space-between;
-      margin-top: 50px;
+      margin-top: 55px;
       flex-wrap: wrap;
-      gap: 25px;
+      gap: 30px;
+      position: relative;
+      z-index: 3;
     }
 
     .signature {
@@ -295,52 +362,70 @@
     }
 
     .signature-img {
-      max-width: 140px;
+      max-width: 150px;
       height: auto;
       margin-bottom: 5px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+      background: transparent;
     }
 
     .signature-line {
-      border-top: 2px solid #2b2b2b;
-      width: 100%;
-      margin: 14px 0 6px;
+      border-top: 2px solid #a67c2e;
+      width: 85%;
+      margin: 14px auto 6px;
     }
 
     .signature-text {
       font-size: 14px;
-      font-weight: 500;
-      color: #2d3748;
+      font-weight: 600;
+      color: #4a3b28;
     }
 
     .cert-id {
       position: absolute;
-      top: 25px;
-      right: 30px;
-      font-weight: 600;
-      background: #f0eef9;
-      padding: 6px 14px;
+      top: 30px;
+      right: 35px;
+      font-weight: 700;
+      background: linear-gradient(115deg, #2b0140, #3c2062);
+      color: #ffdfa5;
+      padding: 7px 18px;
       border-radius: 40px;
-      font-size: 13px;
-      color: #2b0140;
-      letter-spacing: 0.5px;
+      font-size: 12px;
+      letter-spacing: 0.8px;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
     .print-btn {
       display: block;
-      margin: 40px auto 10px;
-      background: #1f5e3a;
-      background: linear-gradient(135deg, #145c33, #0a4023);
-      width: 260px;
+      margin: 45px auto 15px;
+      background: linear-gradient(135deg, #1e6b3e, #0f4a2c);
+      width: 270px;
       text-align: center;
       border-radius: 60px;
-      box-shadow: none;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+      font-weight: bold;
+      position: relative;
+      z-index: 10;
     }
 
     .print-btn:hover {
-      background: #0c4a2c;
+      background: linear-gradient(135deg, #2a804b, #166334);
     }
 
-    /* ---------- PRINT STYLES ---------- */
+    /* decorative vintage pattern */
+    .cert-bg-pattern {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      opacity: 0.03;
+      font-size: 80px;
+      text-align: center;
+      pointer-events: none;
+      z-index: 0;
+    }
+
     @media print {
       body {
         background: white;
@@ -360,12 +445,11 @@
       }
       #certificate {
         display: block !important;
-        border: 12px double #b8860b !important;
+        border: 1px solid #d4af37 !important;
         margin: 0 !important;
-        padding: 30px 25px !important;
+        padding: 35px 30px !important;
         box-shadow: none !important;
-        border-radius: 20px !important;
-        page-break-inside: avoid;
+        border-radius: 0 !important;
         break-inside: avoid;
       }
       .signature-img {
@@ -373,10 +457,13 @@
       }
       .cert-id {
         position: absolute;
-        top: 20px;
-        right: 20px;
+        top: 25px;
+        right: 25px;
       }
       .print-btn {
+        display: none;
+      }
+      #certificate:after, .cert-corner {
         display: none;
       }
     }
@@ -402,53 +489,60 @@
   </div>
 
   <form id="quizForm">
-    <!-- 15 QUESTIONS covering HTML & CSS basics and advanced concepts -->
+    <!-- 15 comprehensive questions -->
     <div class="question"><p>1️⃣ What does HTML stand for?</p><div class="options"><div><input type="radio" name="q1" value="1"> <label>HyperText Markup Language</label></div><div><input type="radio" name="q1" value="0"> <label>Home Tool Markup Language</label></div></div></div>
     <div class="question"><p>2️⃣ Which tag creates a paragraph?</p><div class="options"><div><input type="radio" name="q2" value="1"> <label>&lt;p&gt;</label></div><div><input type="radio" name="q2" value="0"> <label>&lt;h1&gt;</label></div></div></div>
     <div class="question"><p>3️⃣ Which CSS property changes text color?</p><div class="options"><div><input type="radio" name="q3" value="1"> <label>color</label></div><div><input type="radio" name="q3" value="0"> <label>font-size</label></div></div></div>
     <div class="question"><p>4️⃣ Which tag is used for hyperlinks?</p><div class="options"><div><input type="radio" name="q4" value="1"> <label>&lt;a&gt;</label></div><div><input type="radio" name="q4" value="0"> <label>&lt;img&gt;</label></div></div></div>
     <div class="question"><p>5️⃣ CSS stands for?</p><div class="options"><div><input type="radio" name="q5" value="1"> <label>Cascading Style Sheets</label></div><div><input type="radio" name="q5" value="0"> <label>Creative Style Sheets</label></div></div></div>
     <div class="question"><p>6️⃣ Which HTML element defines the largest heading?</p><div class="options"><div><input type="radio" name="q6" value="1"> <label>&lt;h1&gt;</label></div><div><input type="radio" name="q6" value="0"> <label>&lt;heading&gt;</label></div></div></div>
-    <div class="question"><p>7️⃣ Which CSS property controls the spacing between lines of text?</p><div class="options"><div><input type="radio" name="q7" value="1"> <label>line-height</label></div><div><input type="radio" name="q7" value="0"> <label>letter-spacing</label></div></div></div>
-    <div class="question"><p>8️⃣ What is the correct HTML for inserting a background image?</p><div class="options"><div><input type="radio" name="q8" value="0"> <label>&lt;body bg="bg.jpg"&gt;</label></div><div><input type="radio" name="q8" value="1"> <label>&lt;body style="background-image:url('bg.jpg')"&gt;</label></div></div></div>
-    <div class="question"><p>9️⃣ Which CSS property is used to change the font of an element?</p><div class="options"><div><input type="radio" name="q9" value="1"> <label>font-family</label></div><div><input type="radio" name="q9" value="0"> <label>text-style</label></div></div></div>
-    <div class="question"><p>🔟 How do you select an element with id "header" in CSS?</p><div class="options"><div><input type="radio" name="q10" value="1"> <label>#header</label></div><div><input type="radio" name="q10" value="0"> <label>.header</label></div></div></div>
-    <div class="question"><p>1️⃣1️⃣ Which HTML attribute is used to define inline styles?</p><div class="options"><div><input type="radio" name="q11" value="1"> <label>style</label></div><div><input type="radio" name="q11" value="0"> <label>class</label></div></div></div>
-    <div class="question"><p>1️⃣2️⃣ What does the CSS `float` property do?</p><div class="options"><div><input type="radio" name="q12" value="1"> <label>Positions an element to the left or right</label></div><div><input type="radio" name="q12" value="0"> <label>Makes element float in air</label></div></div></div>
-    <div class="question"><p>1️⃣3️⃣ Which HTML tag is used to define an unordered list?</p><div class="options"><div><input type="radio" name="q13" value="1"> <label>&lt;ul&gt;</label></div><div><input type="radio" name="q13" value="0"> <label>&lt;ol&gt;</label></div></div></div>
-    <div class="question"><p>1️⃣4️⃣ Which of the following is the correct way to apply CSS to HTML elements?</p><div class="options"><div><input type="radio" name="q14" value="0"> <label>&lt;css&gt; color: red; &lt;/css&gt;</label></div><div><input type="radio" name="q14" value="1"> <label>&lt;link rel="stylesheet" href="style.css"&gt;</label></div></div></div>
-    <div class="question"><p>1️⃣5️⃣ What does the CSS property `display: flex` do?</p><div class="options"><div><input type="radio" name="q15" value="1"> <label>Enables flexible box layout</label></div><div><input type="radio" name="q15" value="0"> <label>Hides element completely</label></div></div></div>
+    <div class="question"><p>7️⃣ Which CSS property controls line spacing?</p><div class="options"><div><input type="radio" name="q7" value="1"> <label>line-height</label></div><div><input type="radio" name="q7" value="0"> <label>letter-spacing</label></div></div></div>
+    <div class="question"><p>8️⃣ Correct HTML for background image?</p><div class="options"><div><input type="radio" name="q8" value="0"> <label>&lt;body bg="bg.jpg"&gt;</label></div><div><input type="radio" name="q8" value="1"> <label>&lt;body style="background-image:url('bg.jpg')"&gt;</label></div></div></div>
+    <div class="question"><p>9️⃣ CSS property to change font?</p><div class="options"><div><input type="radio" name="q9" value="1"> <label>font-family</label></div><div><input type="radio" name="q9" value="0"> <label>text-style</label></div></div></div>
+    <div class="question"><p>🔟 Select element with id="header" in CSS?</p><div class="options"><div><input type="radio" name="q10" value="1"> <label>#header</label></div><div><input type="radio" name="q10" value="0"> <label>.header</label></div></div></div>
+    <div class="question"><p>1️⃣1️⃣ HTML attribute for inline styles?</p><div class="options"><div><input type="radio" name="q11" value="1"> <label>style</label></div><div><input type="radio" name="q11" value="0"> <label>class</label></div></div></div>
+    <div class="question"><p>1️⃣2️⃣ What does CSS `float` do?</p><div class="options"><div><input type="radio" name="q12" value="1"> <label>Positions element left/right</label></div><div><input type="radio" name="q12" value="0"> <label>Floats in air</label></div></div></div>
+    <div class="question"><p>1️⃣3️⃣ HTML tag for unordered list?</p><div class="options"><div><input type="radio" name="q13" value="1"> <label>&lt;ul&gt;</label></div><div><input type="radio" name="q13" value="0"> <label>&lt;ol&gt;</label></div></div></div>
+    <div class="question"><p>1️⃣4️⃣ Correct way to apply external CSS?</p><div class="options"><div><input type="radio" name="q14" value="0"> <label>&lt;css&gt;color: red;&lt;/css&gt;</label></div><div><input type="radio" name="q14" value="1"> <label>&lt;link rel="stylesheet" href="style.css"&gt;</label></div></div></div>
+    <div class="question"><p>1️⃣5️⃣ What does `display: flex` do?</p><div class="options"><div><input type="radio" name="q15" value="1"> <label>Enables flexible box layout</label></div><div><input type="radio" name="q15" value="0"> <label>Hides element</label></div></div></div>
 
     <button type="button" onclick="submitQuiz()">✅ SUBMIT QUIZ & GENERATE RESULT</button>
   </form>
 
   <div id="result"></div>
 
-  <!-- CERTIFICATE with image1 for signature and image2 for logo -->
+  <!-- PREMIUM CERTIFICATE with exact image links: image1 for signature, image2 for logo -->
   <div id="certificate">
+    <div class="cert-corner corner-tl"></div>
+    <div class="cert-corner corner-tr"></div>
+    <div class="cert-corner corner-bl"></div>
+    <div class="cert-corner corner-br"></div>
+    <div class="cert-bg-pattern">✨ 🎓 ✨</div>
+
     <div class="cert-id">
-      🏅 ID: <span id="certificateId"></span>
+      🏅 CERT ID: <span id="certificateId"></span>
     </div>
     <div class="logo-cert">
-      <img src="image2" alt="TecwithAmey Official Logo" class="logo-img" onerror="this.onerror=null; this.src='https://placehold.co/120x80?text=TWA+Logo';">
+      <!-- image2 = logo image as per your instruction -->
+      <img src="image2" alt="TecwithAmey Official Logo" class="logo-img" onerror="this.onerror=null; this.src='https://placehold.co/130x90?text=TWA+Logo';">
     </div>
     <div class="org-name">TEC WITH AMEY</div>
-    <div class="tagline" style="display: block; text-align: center;">Independent Educational & Skill Development Platform</div>
+    <div class="tagline" style="display: block; text-align: center;">🏛️ INDEPENDENT SKILL DEVELOPMENT PLATFORM 🏛️</div>
     <div class="certificate-title">CERTIFICATE</div>
-    <div class="sub-title" style="display: block; text-align: center;">OF COMPLETION</div>
-    <p class="center">🌟 This Certificate is Proudly Presented To 🌟</p>
+    <div class="sub-title" style="display: block; text-align: center;">🌟 Competition  🌟</div>
+    <p class="center">🎖️ This Certificate is Proudly Conferred Upon 🎖️</p>
     <div class="student-name" id="certName">Student Name</div>
-    <p class="center">🎯 For Successfully Completing 🎯</p>
-    <div class="course-name">HTML & CSS MASTERY (Advanced Basics)</div>
-    <p class="center" style="font-style:italic;">with dedication, technical understanding and excellent performance.</p>
+    <p class="center">🏆 For Successfully Completing the Course 🏆</p>
+    <div class="course-name">HTML & CSS MASTERY (Advanced Fundamentals)</div>
+    <p class="center" style="font-style:italic;">with outstanding performance and technical dedication.</p>
     <div class="info">
-      <div class="info-box"><h3>📅 Date of Issue</h3><p id="certDate"></p></div>
-      <div class="info-box"><h3>🏆 Final Score</h3><p id="certScore"></p></div>
+      <div class="info-box"><h3>📅 Date of Achievement</h3><p id="certDate"></p></div>
+      <div class="info-box"><h3>🏅 Final Assessment Score</h3><p id="certScore"></p></div>
     </div>
     <div class="signature-area">
       <div class="signature">
-        <!-- Mr Amey Lole signature image1 -->
-        <img src="image1" alt="Amey Lole Signature" class="signature-img" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <!-- image1 = Mr Amey Lole signature (as per requirement) -->
+        <img src="image1" alt="Amey Lole Signature" class="signature-img" onerror="this.onerror=null; this.style.display='none'; this.parentNode.querySelector('.signature-line').style.display='block';">
         <div class="signature-line" style="display: none;"></div>
         <div class="signature-text"><strong>Amey Lole</strong><br>Founder & Lead Instructor</div>
       </div>
@@ -457,9 +551,9 @@
         <div class="signature-text"><strong>TecwithAmey</strong><br>Course Provider & Verification</div>
       </div>
     </div>
-    <button class="print-btn" onclick="window.print()">🖨️ SAVE / PRINT CERTIFICATE</button>
+    <button class="print-btn" onclick="window.print()">🖨️ DOWNLOAD / PRINT CERTIFICATE</button>
   </div>
-  <footer>⭐ Passing threshold: 70% • 15 questions, each carries 1 point. Keep learning with TecwithAmey!</footer>
+  <footer>⭐ Passing threshold: 70% • 15 questions, each 1 point. Keep learning with TecwithAmey!</footer>
 </div>
 
 <script>
@@ -485,15 +579,14 @@
     let resultDiv = document.getElementById("result");
     
     if (roundedPercent >= 70) {
-      resultDiv.innerHTML = `<span>✨ AWESOME! ✨ <br> Your Score: ${score}/${totalQuestions} (${roundedPercent}%)<br>🏅 You've earned the TecwithAmey Certificate! 🏅</span>`;
+      resultDiv.innerHTML = `<span>✨✨ OUTSTANDING! ✨✨ <br> 🎯 Score: ${score}/${totalQuestions} (${roundedPercent}%)<br>🏅 Congratulations! You've earned the TecwithAmey Certificate of Excellence. 🏅</span>`;
     } else {
-      resultDiv.innerHTML = `<span>📘 Your Score: ${score}/${totalQuestions} (${roundedPercent}%)<br>📌 You need 70% or higher to unlock the certificate. Review the topics and try again!</span>`;
+      resultDiv.innerHTML = `<span>📚 Score: ${score}/${totalQuestions} (${roundedPercent}%)<br>📌 Minimum 70% required for certificate. Review and retry! 💪</span>`;
     }
 
     const certificateDiv = document.getElementById("certificate");
 
     if (roundedPercent >= 70) {
-      // generate and display certificate
       certificateDiv.style.display = "block";
 
       document.getElementById("certName").innerText = name;
@@ -507,19 +600,18 @@
       let certID = `TWA-${today.getFullYear()}-${randomSuffix}`;
       document.getElementById("certificateId").innerText = certID;
 
-      // smooth scroll to certificate view
       setTimeout(() => {
         certificateDiv.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 180);
+      }, 150);
     } else {
       certificateDiv.style.display = "none";
-      alert(`⚠️ Score: ${roundedPercent}%. Minimum 70% required for certificate. Keep practicing!`);
+      alert(`⚠️ Score: ${roundedPercent}%. Minimum 70% required for certificate. Keep practicing with dedication!`);
     }
 
-    // fallback image handling for broken images (image1 / image2)
+    // graceful fallback for both images (image1 and image2) without breaking layout
     const logoImg = document.querySelector('.logo-img');
     if (logoImg && logoImg.complete && logoImg.naturalWidth === 0) {
-      logoImg.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80"%3E%3Crect width="100" height="80" fill="%232b0140"/%3E%3Ctext x="12" y="45" fill="white" font-size="10"%3ETWA%3C/text%3E%3C/svg%3E';
+      logoImg.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80"%3E%3Crect width="120" height="80" fill="%232b0140"/%3E%3Ctext x="18" y="48" fill="gold" font-size="12"%3ETWA%3C/text%3E%3C/svg%3E';
     }
     const signImg = document.querySelector('.signature-img');
     if (signImg && signImg.complete && signImg.naturalWidth === 0) {
@@ -533,11 +625,11 @@
   window.addEventListener('DOMContentLoaded', function() {
     document.getElementById("certificate").style.display = "none";
     document.getElementById("result").innerHTML = "";
-    // ensure both images have backup if they fail to load
+    // enforce exact image references: image1 and image2 are used as requested
     const logo = document.querySelector('.logo-img');
     if (logo) {
       logo.onerror = function() {
-        this.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80"%3E%3Crect width="120" height="80" fill="%23401a5e"/%3E%3Ctext x="18" y="48" fill="gold" font-size="13"%3ETecwithAmey%3C/text%3E%3C/svg%3E';
+        this.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 90"%3E%3Crect width="140" height="90" fill="%23331547"/%3E%3Ctext x="20" y="52" fill="%23e4c580" font-size="14"%3ETecwithAmey%3C/text%3E%3C/svg%3E';
       };
     }
     const signature = document.querySelector('.signature-img');
